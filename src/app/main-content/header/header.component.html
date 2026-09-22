@@ -12,7 +12,7 @@
   <mat-form-field class="search-container">
     <input matInput type="text" placeholder="Devspace durchsuchen" [(ngModel)]="searchTerm" (input)="onSearchInput()">
     <button matSuffix mat-icon-button aria-label="Clear">
-      <mat-icon>search</mat-icon>
+        <img class="search-icon" src="icons/search_icon.png" alt="search_icon"/> 
     </button>
   </mat-form-field>
   <div class="user-container" #div (click)="openDialog('0ms', '0ms', div)">
@@ -25,7 +25,7 @@
         <img class="status-img" src="{{ channelService.currentUser?.active ? onlineUser : offlineUser }}" alt="">
       </div>
       <div>
-        <mat-icon class="arrow-down">keyboard_arrow_down</mat-icon>
+        <img class="arrow-down-icon" src="icons/arrow_down_icon.png" alt="icons/arrow_down_icon" />
       </div>
     </div>
   </div>
@@ -37,13 +37,13 @@
 
     <div *ngIf="dropdownType === 'channel'" class="dropdown-section">
       <div class="dropdown-header">
-        <mat-icon>tag</mat-icon>
+        <img class="tag-icon" src="icons/tag_icon.png" alt="tag_icon" />
         <span>Channels</span>
       </div>
       <div *ngFor="let channel of channelResults" class="search-result-item channel-item standard-transition"
         (click)="selectChannelResult(channel)">
         <div class="result-icon">
-          <mat-icon>tag</mat-icon>
+          <img class="tag-icon" src="icons/tag_icon.png" alt="tag_icon" />
         </div>
         <div class="result-content">
           <div class="result-name">{{channel.name}}</div>
@@ -84,7 +84,7 @@
 
     <div *ngIf="dropdownType === 'normal'" class="dropdown-section">
       <div class="dropdown-header">
-        <mat-icon>search</mat-icon>
+        <img class="search-icon" src="icons/search_icon.png" alt="search_icon"/> 
         <span>Nachrichten</span>
       </div>
       <div *ngFor="let result of searchResults" class="search-result-item message-item standard-transition"
