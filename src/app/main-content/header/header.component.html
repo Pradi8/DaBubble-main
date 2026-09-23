@@ -37,13 +37,13 @@
 
     <div *ngIf="dropdownType === 'channel'" class="dropdown-section">
       <div class="dropdown-header">
-        <img class="tag-icon" src="icons/tag_icon.png" alt="tag_icon" />
+        <img class="tag-icon" src="icons/tag_icon.png" alt="tag_icon"/>
         <span>Channels</span>
       </div>
       <div *ngFor="let channel of channelResults" class="search-result-item channel-item standard-transition"
         (click)="selectChannelResult(channel)">
         <div class="result-icon">
-          <img class="tag-icon" src="icons/tag_icon.png" alt="tag_icon" />
+          <img class="tag-icon" src="icons/tag_icon.png" alt="tag_icon"/>
         </div>
         <div class="result-content">
           <div class="result-name">{{channel.name}}</div>
@@ -57,7 +57,7 @@
 
     <div *ngIf="dropdownType === 'user'" class="dropdown-section">
       <div class="dropdown-header">
-        <mat-icon>person</mat-icon>
+        <mat-icon>person</mat-icon> 
         <span>Personen</span>
       </div>
       <div *ngFor="let user of userResults" class="search-result-item user-item standard-transition"
@@ -90,7 +90,11 @@
       <div *ngFor="let result of searchResults" class="search-result-item message-item standard-transition"
         (click)="selectMessageResult(result)">
         <div class="result-icon">
-          <mat-icon>{{ result.isDirectMessage ? 'message' : 'tag' }}</mat-icon>
+          <img
+            class="result-icon"
+            [src]="result.isDirectMessage ? 'chat-section/comment-color.png' : 'icons/tag_icon.png'"
+            [alt]="result.isDirectMessage ? 'Nachricht' : 'Tag'"
+          />
         </div>
         <div class="result-content">
           <div class="result-name">{{ result.name }}</div>

@@ -1,6 +1,8 @@
 <div class="header-container">
   <p>{{ userUpdateNameAktiv ? 'Dein Profil bearbeiten' : 'Profil' }}</p>
-  <button class="close-icon" (click)="closeDialog()"><mat-icon>close_small</mat-icon></button>
+  <button class="close-icon" (click)="closeDialog()">
+    <img src="icons/close_icon.png" alt="close_icon"/>
+  </button>
 </div>
 <div class="user-avatar">
   <img class="avatar-img" [src]="userUpdateNameAktiv ? selectedAvatar : 'avatar/' + data.user.avatar" alt="">
@@ -17,13 +19,13 @@
       </span>
     </div>
     <div [ngClass]="data.user.active ? 'online' : 'offline'">
-      <mat-icon>fiber_manual_record</mat-icon>
+      <img src="icons/online_icon.png" alt="online_icon"/>
       <p>{{data.user.active ? 'Online' : 'Offline'}}</p>
     </div>
   </div>
   <div class="email-container">
     <div>
-      <mat-icon>mail_outline</mat-icon>
+      <img class="email-icon" src="icons/mail_icon.png" alt="email_icon"/>
       <p>E-Mail-Adresse</p>
     </div>
     <div class="email-adress">

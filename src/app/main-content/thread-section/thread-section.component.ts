@@ -27,7 +27,6 @@ import { EmojiPickerService } from '../../services/emojiPicker.service';
     ReceivedMessageComponent,
     InputMessageComponent,
     HeaderChatSectionComponent,
-    MatIcon,
     NgStyle,
     PickerComponent
   ],

@@ -118,11 +118,13 @@ p {
     >div {
         @include dFlex();
         flex-direction: row;
-
-        >mat-icon {
-            padding-right: 15px;
-        }
     }
+}
+
+.email-icon {
+    width: 25px;
+    height: 20px;
+    padding-right: 15px;
 }
 
 .email-adress {
