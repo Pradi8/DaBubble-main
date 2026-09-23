@@ -30,7 +30,7 @@
     </div>
   </div>
   <div class="desktop avatar-container" (click)="openDialogMobile()">
-        <img *ngIf="channelService?.currentUser?.avatar" [src]="'avatar/' + channelService.currentUser?.avatar">
+        <img *ngIf="channelService.currentUser?.avatar" [src]="'avatar/' + channelService.currentUser?.avatar">
   </div>
 
   <div class="search-results" *ngIf="showDropdown">
@@ -57,7 +57,7 @@
 
     <div *ngIf="dropdownType === 'user'" class="dropdown-section">
       <div class="dropdown-header">
-        <mat-icon>person</mat-icon> 
+        <img src="icons/person_icon.png" alt="person_icon"/> 
         <span>Personen</span>
       </div>
       <div *ngFor="let user of userResults" class="search-result-item user-item standard-transition"
@@ -66,7 +66,7 @@
           <div class="avatar-wrapper">
             <img *ngIf="user.avatar" [src]="'avatar/' + user.avatar" class="user-avatar" alt="">
             <div *ngIf="!user.avatar" class="default-avatar">
-              <mat-icon>person</mat-icon>
+              <img src="icons/person_icon.png" alt="person_icon"/>
             </div>
             <img class="status-img-search"
               [src]="user.description === 'Online' ? 'status/online.png' : 'status/offline.png'" alt="">

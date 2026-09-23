@@ -19,7 +19,7 @@
       </span>
     </div>
     <div [ngClass]="data.user.active ? 'online' : 'offline'">
-      <img src="icons/online_icon.png" alt="online_icon"/>
+        <img [src]="data.user.active ? 'icons/online_icon.png' : 'icons/offline_icon.png'"/>
       <p>{{data.user.active ? 'Online' : 'Offline'}}</p>
     </div>
   </div>
