@@ -89,9 +89,6 @@
     }
 }
 
-mat-icon {
-    color: black;
-}
 
 mat-panel-description {
     font-family: 'Nunito';
@@ -100,6 +97,10 @@ mat-panel-description {
 .mat-expansion-panel {
     background-color: transparent;
     border: none;
+}
+
+.channel-img {
+    padding-right: 10px;
 }
 
 .mat-expansion-panel-header {
@@ -135,6 +136,7 @@ mat-panel-description {
 
 .mat-expansion-panel-header-description {
     color: black;
+    padding: 5px;
 }
 
 .mat-accordion .mat-expansion-panel:last-of-type {
@@ -176,10 +178,6 @@ button {
 
     &:hover {
         color: #535AF1;
-
-        mat-icon {
-            color: #535AF1;
-        }
     }
 
     >mat-icon {
