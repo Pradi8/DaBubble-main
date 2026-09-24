@@ -45,14 +45,14 @@
             <div class="search-results" *ngIf="showDropdown">
                 <div *ngIf="dropdownType === 'channel'" class="dropdown-section">
                     <div class="dropdown-header">
-                        <mat-icon>tag</mat-icon>
+                        <img class="tag-icon" src="icons/tag_icon.png" alt="tag_icon"/>
                         <span>Channels</span>
                     </div>
                     <div *ngFor="let channel of channelResults" 
                          class="search-result-item channel-item standard-transition"
                          (click)="selectChannelResult(channel)">
                         <div class="result-icon">
-                            <mat-icon>tag</mat-icon>
+                            <img class="tag-icon" src="icons/tag_icon.png" alt="tag_icon"/>
                         </div>
                         <div class="result-content">
                             <div class="result-name">{{channel.name}}</div>
@@ -76,7 +76,7 @@
                             <div class="avatar-wrapper">
                                 <img *ngIf="user.avatar" [src]="'avatar/' + user.avatar" class="user-avatar" alt="">
                                 <div *ngIf="!user.avatar" class="default-avatar">
-                                    <mat-icon>person</mat-icon>
+                                    <img src="icons/person_icon.png" alt="person_icon"/>
                                 </div>
                                 <img class="status-img-search"
                                      [src]="user.description === 'Online' ? 'status/online.png' : 'status/offline.png'" alt="">
@@ -94,7 +94,7 @@
 
                 <div *ngIf="dropdownType === 'email'" class="dropdown-section">
                     <div class="dropdown-header">
-                        <mat-icon>email</mat-icon>
+                        <img src="icons/mail_icon.png" alt="mail_icon"/>
                         <span>E-Mail Adressen</span>
                     </div>
                     <div *ngFor="let user of emailResults" 
@@ -104,7 +104,7 @@
                             <div class="avatar-wrapper">
                                 <img *ngIf="user.avatar" [src]="'avatar/' + user.avatar" class="user-avatar" alt="">
                                 <div *ngIf="!user.avatar" class="default-avatar">
-                                    <mat-icon>person</mat-icon>
+                                    <img src="icons/person_icon.png" alt="person_icon"/>
                                 </div>
                                 <img class="status-img-search"
                                      [src]="user.description === 'Online' ? 'status/online.png' : 'status/offline.png'" alt="">

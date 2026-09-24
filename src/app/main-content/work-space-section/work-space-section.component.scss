@@ -5,6 +5,7 @@
     border-radius: 30px;
     background-color: white;
     position: relative;
+    font-family: 'Nunito';
 }
 
 .sidenav-toggle-btn {
@@ -93,10 +94,7 @@ mat-icon {
 }
 
 mat-panel-description {
-    >mat-icon {
-        padding-right: 10px;
-        width: 22px;
-    }
+    font-family: 'Nunito';
 }
 
 .mat-expansion-panel {
