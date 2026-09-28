@@ -92,6 +92,7 @@ export class WorkSpaceSectionComponent implements OnInit, OnDestroy {
   onlineUser: string = 'status/online.png';
   offlineUser: string = 'status/offline.png';
   imgSrc: string = 'work-space/edit-square.png';
+  addChannelImgSrc: string = 'icons/add_circle_icon.png';
 
   accordion = viewChild.required(MatAccordion);
   activeChannelId!: string;

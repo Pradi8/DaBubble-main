@@ -179,9 +179,9 @@ button {
     &:hover {
         color: #535AF1;
     }
-
-    >mat-icon {
-        transition: all 100ms ease-in;
+    >img {
+        width: 24px;
+        height: 24px;
     }
 
 }

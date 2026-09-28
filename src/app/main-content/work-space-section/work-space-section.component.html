@@ -122,8 +122,11 @@
               </div>
               <div>
                 <button (click)="createChannel()">
-                  <span class="add-user-channel">
-                    <img src="icons/add_circle_icon.png" alt="add_circle_icon"/>
+                  <span class="add-user-channel"
+                    (mouseenter)="addChannelImgSrc = 'icons/add_circle_purple_icon.png'"
+                    (mouseleave)="addChannelImgSrc = 'icons/add_circle_icon.png'"
+                    >
+                    <img [src]="addChannelImgSrc" alt="add channel">
                     Channel hinzufügen
                   </span>
                 </button>
@@ -290,8 +293,11 @@
                 </div>
                 <div>
                   <button (click)="createChannel()">
-                    <span class="add-user-channel">
-                      <img src="icons/add_circle_icon.png" alt="add_circle_icon"/>
+                    <span class="add-user-channel"
+                      (mouseenter)="addChannelImgSrc = 'icons/add_circle_purple_icon.png'"
+                      (mouseleave)="addChannelImgSrc = 'icons/add_circle_icon.png'"
+                      >
+                      <img [src]="addChannelImgSrc" alt="add channel">
                       Channel hinzufügen
                     </span>
                   </button>
