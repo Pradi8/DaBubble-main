@@ -1,7 +1,6 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { MatDialogRef } from '@angular/material/dialog';
-import { MatIcon } from '@angular/material/icon';
 import { ChannelService } from '../../../services/channel.service';
 import { MatButtonModule } from '@angular/material/button';
 import { UserService } from '../../../services/user.service';
@@ -12,7 +11,7 @@ import { MatBottomSheetRef } from '@angular/material/bottom-sheet';
 
 @Component({
   selector: 'app-add-user-to-channel',
-  imports: [MatIcon, FormsModule, MatButtonModule, CommonModule, MatAutocompleteModule],
+  imports: [FormsModule, MatButtonModule, CommonModule, MatAutocompleteModule],
   templateUrl: './add-user-to-channel.component.html',
   styleUrl: './add-user-to-channel.component.scss'
 })

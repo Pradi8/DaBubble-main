@@ -18,7 +18,7 @@ import {
 
 @Component({
   selector: 'app-create-channel-section',
-  imports: [MatIcon, MatInputModule, MatButtonModule, MatFormFieldModule, MatDialogActions, CommonModule, FormsModule, MatBottomSheetModule],
+  imports: [MatInputModule, MatButtonModule, MatFormFieldModule, MatDialogActions, CommonModule, FormsModule, MatBottomSheetModule],
   templateUrl: './create-channel-section.component.html',
   styleUrl: './create-channel-section.component.scss'
 })

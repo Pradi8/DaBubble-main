@@ -6,14 +6,21 @@
             {{ channelService.userSubcollectionChannelName }}
         } </span>
         <div class="close-icon">
-            <mat-icon (click)="dialogRef.close()">close</mat-icon>
+            <img class="close-icon" (click)="dialogRef.close()" src="icons/close_icon.png" alt="close_icon"/>
         </div>
     </div>
     <mat-card *ngIf="!showEditChannelName" class="channel-headline mat-card-class">
         <div class="channel-name-description-edit">
             <span class="channel-name">Channel - Name</span>
             <span (click)="editChannelName()" class="channel-edit standard-transition">
-                <mat-icon class="desktop edit">edit</mat-icon>  
+                <img 
+                    class="desktop edit-icon"
+                    [src]="isPressed_channelName ? 'icons/edit_purple_icon.png' : 'icons/edit_black_icon.png'"
+                    (mousedown)="isPressed_channelName = true"
+                    (mouseup)="isPressed_channelName = false"
+                    (mouseleave)="isPressed_channelName = false"
+                    alt="edit_icon"
+                />
                 <button class="save-button">Bearbeiten</button> 
             </span>
         </div>
@@ -27,7 +34,15 @@
         <div class="channel-name-description-edit">
             <span class="channel-name">Channel - Name</span>
             <span class="channel-edit standard-transition">
-                <mat-icon (click)="saveEditedChannelName()" class="desktop edit">check_circle</mat-icon>
+                <img 
+                    class="desktop edit-icon"
+                    [src]="isPressed_channelName ? 'icons/check_circle_purple_icon.png' : 'icons/check_circle_black_icon.png'"
+                    (mousedown)="isPressed_channelName = true"
+                    (mouseup)="isPressed_channelName = false"
+                    (mouseleave)="isPressed_channelName = false"
+                    (click)="saveEditedChannelName()"
+                    alt="edit_icon"
+                />
                 <button (click)="saveEditedChannelName()" class="save-button" [disabled]="!isEnabled" [ngClass]="{'btn-enabled': isEnabled, 'btn-disabled': !isEnabled}">Speichern</button>
             </span>
         </div>
@@ -44,7 +59,14 @@
         <div class="channel-name-description-edit">
             <span class="channel-name">Beschreibung</span>
             <span (click)="editChannelDescription()" class="channel-edit standard-transition">
-                <mat-icon class="desktop edit">edit</mat-icon>
+                <img 
+                    class="desktop edit-icon"
+                    [src]="isPressed_channelDescription ? 'icons/edit_purple_icon.png' : 'icons/edit_black_icon.png'"
+                    (mousedown)="isPressed_channelDescription = true"
+                    (mouseup)="isPressed_channelDescription = false"
+                    (mouseleave)="isPressed_channelDescription = false"
+                    alt="edit_icon"
+                />
                 <button class="save-button">Bearbeiten</button>
             </span> 
         </div>
@@ -62,8 +84,16 @@
     <div *ngIf="showEditChannelDescription" class="edit-channel-description">
         <div class="channel-name-description-edit">
             <span class="channel-name">Beschreibung</span>
-            <span (click)="saveEditedChannelDescription()" class="channel-edit standard-transition">
-                <mat-icon class="desktop edit">check_circle</mat-icon>
+            <span class="channel-edit standard-transition">
+                <img 
+                    class="desktop edit-icon"
+                    [src]="isPressed_channelDescription ? 'icons/check_circle_purple_icon.png' : 'icons/check_circle_black_icon.png'"
+                    (mousedown)="isPressed_channelDescription = true"
+                    (mouseup)="isPressed_channelDescription = false"
+                    (mouseleave)="isPressed_channelDescription = false"
+                    (click)="saveEditedChannelDescription()"
+                    alt="edit_icon"
+                />
                 <button class="save-button">Speichern</button>
             </span>
         </div>

@@ -4,7 +4,7 @@
     </div>
     <div class="add-user-header marg-bot">
         <p>Leute hinzufügen</p>
-            <mat-icon class="close-icon" (click)="close()">close</mat-icon>
+        <img class="close-icon" (click)="close()" src="icons/close_icon.png" alt="close_icon"/>
     </div>
     <div class="selector">
         <mat-radio-group aria-label="Select an option"  [(ngModel)]="selectAllUsersInChannel" (change)="checkboxValue()">
@@ -48,9 +48,9 @@
             <div class="selected-users-cont" (click)="showSearchBar()">
                 @for (user of selectedUsers; track $index) {
                     <div class="selected-users">
-                        <img class="user-avatar" src="avatar/{{user.avatar}}">
+                        <img class="user-avatar result-user" src="avatar/{{user.avatar}}">
                         <span>{{ user.name }}</span>
-                        <mat-icon class="selected-user-remove-icon" (click)="removeSelectedUser(user.userId, $event); $event.stopPropagation()">close</mat-icon>
+                        <img class="close-icon" (click)="removeSelectedUser(user.userId, $event); $event.stopPropagation()" src="icons/close_icon.png" alt="close_icon"/>
                     </div>
                     }
             </div>

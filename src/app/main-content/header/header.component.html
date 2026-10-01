@@ -64,12 +64,12 @@
         (click)="selectUserResult(dropdownType,user)">
         <div class="result-icon">
           <div class="avatar-wrapper">
-            <img *ngIf="user.avatar" [src]="'avatar/' + user.avatar" class="user-avatar" alt="">
+            <img *ngIf="user.avatar" [src]="'avatar/' + user.avatar" class="user-avatar">
             <div *ngIf="!user.avatar" class="default-avatar">
               <img src="icons/person_icon.png" alt="person_icon"/>
             </div>
             <img class="status-img-search"
-              [src]="user.description === 'Online' ? 'status/online.png' : 'status/offline.png'" alt="">
+              [src]="user.description === 'Online' ? 'status/online.png' : 'status/offline.png'">
           </div>
         </div>
         <div class="result-content">

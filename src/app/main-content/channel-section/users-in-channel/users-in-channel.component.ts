@@ -1,6 +1,5 @@
 import { Component, inject } from '@angular/core';
 import { MatDialog, MatDialogRef } from '@angular/material/dialog';
-import { MatIcon } from '@angular/material/icon';
 import { UserService } from '../../../services/user.service';
 import { AsyncPipe, CommonModule } from '@angular/common';
 import { ChannelService } from '../../../services/channel.service';
@@ -10,7 +9,7 @@ import { ChatService } from '../../../services/chat.service';
 
 @Component({
   selector: 'app-users-in-channel',
-  imports: [MatIcon, AsyncPipe, CommonModule],
+  imports: [AsyncPipe, CommonModule],
   templateUrl: './users-in-channel.component.html',
   styleUrl: './users-in-channel.component.scss'
 })

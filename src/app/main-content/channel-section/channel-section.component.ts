@@ -1,6 +1,5 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { MatCardModule } from '@angular/material/card';
-import { MatIcon } from '@angular/material/icon';
 import { MatDialogRef } from '@angular/material/dialog';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDividerModule } from '@angular/material/divider';
@@ -14,7 +13,7 @@ import { AddUserToChannelComponent } from './add-user-to-channel/add-user-to-cha
 
 @Component({
   selector: 'app-channel-section',
-  imports: [MatCardModule, MatIcon, MatButtonModule, MatDividerModule, CommonModule, FormsModule],
+  imports: [MatCardModule, MatButtonModule, MatDividerModule, CommonModule, FormsModule],
   templateUrl: './channel-section.component.html',
   styleUrl: './channel-section.component.scss'
 })
@@ -25,6 +24,8 @@ export class ChannelSectionComponent implements OnInit {
   channelService = inject(ChannelService);
   isEnabled = false;
   nameExist = false;
+  isPressed_channelName = false;
+  isPressed_channelDescription = false;
 
   showEditChannelName = false;
   showEditChannelDescription = false;

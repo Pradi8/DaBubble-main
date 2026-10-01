@@ -1,7 +1,7 @@
 <div class="users-in-channel-main-cont">
     <div class="add-user-header">
         <p>Mitglieder</p>
-        <mat-icon class="close-icon" (click)="dialog.close()">close</mat-icon>
+        <img class="close-icon" (click)="dialog.close()" src="icons/close_icon.png" alt="close_icon"/>
     </div>
     <div class="users-in-channel">
         @for (user of dataUser.userAvatarInChannel$ | async; track $index) {

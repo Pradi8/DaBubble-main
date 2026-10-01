@@ -63,8 +63,16 @@ body {
     src: url('./app/assets/fonts/Nunito-Regular.ttf');
 }
 
+.close-icon {
+    cursor: pointer;
+}
+
+.edit-icon {
+    cursor: pointer;
+}
 
 .channel-dialog-container .mat-mdc-dialog-surface {
+    font-family: 'Nunito';
     background-color: #FFFFFF;
     padding: 25px;
     box-shadow: 0px 6px 10px 0px #00000033;
@@ -416,6 +424,7 @@ app-input-message {
 }
 
 mat-option {
+    font-family: 'Nunito';
     font-size: 18px;
     font-weight: 400;
     color: #000000;
@@ -547,6 +556,7 @@ app-main-content {
 
 .mdc-label {
     font-size: 18px;
+    font-family: 'Nunito';
 }
 
 .user-status {
@@ -624,19 +634,19 @@ app-main-content {
     background-color: #D9D9D9;
 }
 
-mat-icon.edit {
-    color: gray;
-    cursor: pointer;
-    transition: color 0.3s ease;
-    background-color: #ECEEFE;
-    border-radius: 50%;
-    padding: 5px;
-}
+// mat-icon.edit {
+//     color: gray;
+//     cursor: pointer;
+//     transition: color 0.3s ease;
+//     background-color: #ECEEFE;
+//     border-radius: 50%;
+//     padding: 5px;
+// }
 
-mat-icon.edit:active,
-mat-icon.edit:focus-visible {
-    color: blue !important;
-}
+// mat-icon.edit:active,
+// mat-icon.edit:focus-visible {
+//     color: blue !important;
+// }
 
 .exist-text {
     color: rgb(185, 8, 8);

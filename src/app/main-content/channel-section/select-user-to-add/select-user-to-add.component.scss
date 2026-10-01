@@ -13,14 +13,8 @@
 
 .selector {
   >mat-radio-group {
-    font-size: 18px;
-    font-weight: 400;
     @include dFlex(space-between, unset);
     flex-direction: column;
-  }
-  >mat-radio-button {
-    font-size: 18px;
-    font-weight: 400;
   }
 }
 
@@ -72,7 +66,7 @@
   gap: 10px;
   box-sizing: border-box;
   padding: 3px 20px 3px 20px;
-  >img {
+  .result-user {
     width: 34px;
     height: 34px;
   }

@@ -3,22 +3,17 @@ import { Component, ElementRef, inject, ViewChild } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDialogRef } from '@angular/material/dialog';
-import { MatIcon } from '@angular/material/icon';
 import { MatRadioModule } from '@angular/material/radio';
 import { UserService } from '../../../services/user.service';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { Router } from '@angular/router';
 import { ChannelService } from '../../../services/channel.service';
 import { Allchannels } from '../../../../models/allchannels.class';
-import {
-  MatBottomSheet,
-  MatBottomSheetModule,
-  MatBottomSheetRef,
-} from '@angular/material/bottom-sheet';
+import { MatBottomSheetRef } from '@angular/material/bottom-sheet';
 
 @Component({
   selector: 'app-select-user-to-add',
-  imports: [MatIcon, MatRadioModule, MatButtonModule, FormsModule, CommonModule, MatAutocompleteModule],
+  imports: [MatRadioModule, MatButtonModule, FormsModule, CommonModule, MatAutocompleteModule],
   templateUrl: './select-user-to-add.component.html',
   styleUrl: './select-user-to-add.component.scss'
 })
