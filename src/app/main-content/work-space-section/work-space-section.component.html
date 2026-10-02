@@ -71,7 +71,9 @@
             <div *ngFor="let result of searchResults" class="search-result-item message-item standard-transition"
               (click)="selectMessageResult(result)">
               <div class="result-icon">
-                <mat-icon>{{ result.isDirectMessage ? 'message' : 'tag' }}</mat-icon>
+                <img
+                  [src]="result.isDirectMessage ? 'chat-section/comment-color.png' : 'icons/tag_icon.png'" alt="Channel Icon"
+                />
               </div>
               <div class="result-content">
                 <div class="result-name">{{ result.name }}</div>
@@ -103,7 +105,15 @@
                   Channels
                 </mat-panel-description>
                 <div class="add-channel standard-transition">
-                  <mat-icon (click)="createChannel(); $event.stopPropagation()">add</mat-icon>
+                  <img 
+                    class="desktop edit-icon"
+                    [src]="isPressed_addChannel ? 'icons/add_purple_icon.png' : 'icons/add_icon.png'"
+                    (mousedown)="isPressed_addChannel = true"
+                    (mouseup)="isPressed_addChannel = false"
+                    (mouseleave)="isPressed_addChannel = false"
+                    (click)="createChannel(); $event.stopPropagation()"
+                    alt="add_icon"
+                />
                 </div>
               </mat-expansion-panel-header>
               <div
@@ -241,7 +251,9 @@
               <div *ngFor="let result of searchResults" class="search-result-item message-item standard-transition"
                 (click)="selectMessageResult(result)">
                 <div class="result-icon">
-                  <mat-icon>{{ result.isDirectMessage ? 'message' : 'tag' }}</mat-icon>
+                  <img
+                    [src]="result.isDirectMessage ? 'chat-section/comment-color.png' : 'icons/tag_icon.png'" alt="Channel Icon"
+                  />
                 </div>
                 <div class="result-content">
                   <div class="result-name">{{ result.name }}</div>
@@ -260,14 +272,25 @@
         <div class="add-channels-container">
           <div>
             <mat-accordion class="example-headers-align" multi="false">
-              <mat-expansion-panel>
+              <mat-expansion-panel
+                  (opened)="navigationService.hideEditIcon()"
+                  (closed)="navigationService.showEditIconAgain()" 
+              >
                 <mat-expansion-panel-header>
                   <mat-panel-description class="standard-transition"> 
                     <img class="standard-transition channel-img" src="icons/workspaces_icon.png" alt="workspaces_icon"/>
                       Channels
                   </mat-panel-description>
                   <div class="add-channel standard-transition">
-                    <mat-icon (click)="createChannel(); $event.stopPropagation()">add</mat-icon>
+                  <img 
+                    class="desktop edit-icon"
+                    [src]="isPressed_addChannel ? 'icons/add_purple_icon.png' : 'icons/add_icon.png'"
+                    (mousedown)="isPressed_addChannel = true"
+                    (mouseup)="isPressed_addChannel = false"
+                    (mouseleave)="isPressed_addChannel = false"
+                    (click)="createChannel(); $event.stopPropagation()"
+                    alt="add_icon"
+                />
                   </div>
                 </mat-expansion-panel-header>
                 <div
@@ -309,7 +332,11 @@
         </div>
         <div class="useres-list-container">
           <mat-accordion class="example-headers-align" multi>
-            <mat-expansion-panel #myPaneltwo="matExpansionPanel">
+            <mat-expansion-panel 
+              #myPaneltwo="matExpansionPanel"
+                (opened)="navigationService.hideEditIcon()"
+                (closed)="navigationService.showEditIconAgain()" 
+            >
               <mat-expansion-panel-header>
                 <mat-panel-description class="standard-transition"> 
                   <img class="account-img standard-transition" src="work-space/account-circle.png"/>
@@ -343,7 +370,9 @@
       </mat-drawer>
     </mat-drawer-container>
   </div>
-  <div class="edit-icon">
+  @if (navigationService.showEditIcon()) {
+      <div class="edit-icon">
     <img class="write-message-icon" src="work-space/16B. edit_square.png" (click)="openNewMessage()"/>
   </div>
+  }
 </div>

@@ -14,7 +14,6 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatDrawer, MatSidenavModule } from '@angular/material/sidenav';
 import { MatSelectModule } from '@angular/material/select';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatIcon } from '@angular/material/icon';
 import { MatAccordion, MatExpansionModule } from '@angular/material/expansion';
 import { MatInputModule } from '@angular/material/input';
 import { AsyncPipe, CommonModule, DatePipe, NgFor } from '@angular/common';
@@ -30,14 +29,9 @@ import { ChatService } from '../../services/chat.service';
 import { Userstorage } from '../../../models/userStorage.class';
 import { FormsModule } from '@angular/forms';
 import { NavigationService } from '../../services/navigation.service';
-import { ChatSectionComponent } from '../chat-section/chat-section.component';
 import { SearchService, SearchResult } from '../../services/search.service';
 import { debounceTime, distinctUntilChanged } from 'rxjs/operators';
 import { Firestore, doc, getDoc } from '@angular/fire/firestore';
-import { ChannelSectionComponent } from '../channel-section/channel-section.component';
-import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
-import { BehaviorSubject } from 'rxjs';
-import { ThreadSectionComponent } from '../thread-section/thread-section.component';
 
 @Component({
   selector: 'app-work-space-section',
@@ -46,7 +40,6 @@ import { ThreadSectionComponent } from '../thread-section/thread-section.compone
     MatSidenavModule,
     MatSelectModule,
     MatFormFieldModule,
-    MatIcon,
     MatExpansionModule,
     MatAccordion,
     MatInputModule,
@@ -73,7 +66,6 @@ export class WorkSpaceSectionComponent implements OnInit, OnDestroy {
   private firestore = inject(Firestore);
   private injector = inject(Injector);
   readonly dialog = inject(MatDialog);
-  private breakpointObserver = inject(BreakpointObserver);
   
   unsubChannels!: Subscription;
   private userDataSub?: Subscription;
@@ -93,12 +85,15 @@ export class WorkSpaceSectionComponent implements OnInit, OnDestroy {
   offlineUser: string = 'status/offline.png';
   imgSrc: string = 'work-space/edit-square.png';
   addChannelImgSrc: string = 'icons/add_circle_icon.png';
+  showEditIcon = true;
 
   accordion = viewChild.required(MatAccordion);
   activeChannelId!: string;
   activeUserId!: string;
   searchTerm: string = '';
   routeSub: Subscription | undefined;
+
+  isPressed_addChannel: boolean = false;
 
   searchResults: any[] = [];
   channelResults: SearchResult[] = [];
@@ -176,7 +171,7 @@ export class WorkSpaceSectionComponent implements OnInit, OnDestroy {
   createChannel() {
     (document.activeElement as HTMLElement)?.blur();
     const { width, height } = this.channelService.getDialogDimensions();
-    this.dialog.open(CreateChannelSectionComponent, {
+    const dialogRef = this.dialog.open(CreateChannelSectionComponent, {
     width,
     height,
     maxWidth: width,
@@ -184,6 +179,10 @@ export class WorkSpaceSectionComponent implements OnInit, OnDestroy {
     panelClass: 'channel-dialog-container',
     autoFocus: false,
     restoreFocus: false,
+    });
+    this.navigationService.hideEditIcon();
+    dialogRef.afterClosed().subscribe(() => {
+      this.navigationService.showEditIconAgain();
     });
   }
 

@@ -73,13 +73,6 @@ header {
   color: #686868;
   text-transform: uppercase;
   letter-spacing: 0.5px;
-
-  mat-icon {
-    width: 24px;
-    height: 24px;
-    font-size: 24px;
-    color: #686868;
-  }
 }
 
 .search-result-item {
@@ -114,35 +107,16 @@ header {
   flex-shrink: 0;
   position: relative;
 
-  mat-icon {
-    width: 20px;
-    height: 20px;
-    font-size: 20px;
-    color: #535AF1;
-  }
-
   .channel-item & {
     background-color: #f5f5f5;
-
-    mat-icon {
-      color: #444df2;
-    }
   }
 
   .user-item & {
     background-color: transparent;
-
-    mat-icon {
-      color: #ADB0D9;
-    }
   }
 
   .message-item & {
     background-color: #f5f5f5;
-
-    mat-icon {
-      color: #444df2;
-    }
   }
 }
 
@@ -166,10 +140,6 @@ header {
   height: 40px;
   border-radius: 50%;
   background-color: #e0e0e0;
-
-  mat-icon {
-    color: #757575;
-  }
 }
 
 .status-img-search {

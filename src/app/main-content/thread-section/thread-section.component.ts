@@ -2,7 +2,6 @@ import { AfterViewInit, Component, inject, OnInit, ViewChild, ElementRef, AfterV
 import { MatButtonModule } from '@angular/material/button';
 import { MatDrawer, MatSidenavModule } from '@angular/material/sidenav';
 import { ChatService } from '../../services/chat.service';
-import { MatIcon } from '@angular/material/icon';
 import { NgFor, NgIf, NgStyle } from '@angular/common';
 import { ChannelService } from '../../services/channel.service';
 import { SentMessageComponent } from '../chat-section/sent-message/sent-message.component';

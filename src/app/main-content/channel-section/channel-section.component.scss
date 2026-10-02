@@ -15,10 +15,6 @@
     cursor: default;
 }
 
-mat-icon {
-    cursor: pointer;
-}
-
 .close-icon {
     border-radius: 50%;
 }
@@ -96,6 +92,7 @@ mat-icon {
 }
 
 .mat-mdc-unelevated-button {
+    font-family: 'Nunito';
     width: 204px;
     height: 49px;
     background-color: #444DF2 !important; 

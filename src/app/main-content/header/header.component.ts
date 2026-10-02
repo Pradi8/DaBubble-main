@@ -88,8 +88,12 @@ export class HeaderComponent {
   }
 
   openDialogMobile(): void {
+    this.navigationService.hideEditIcon();
     const bottomSheetRef = this.bottomSheet.open(EditLogoutUserComponent, {
     panelClass: 'select-user-bottomsheet',
+    });
+    bottomSheetRef.afterDismissed().subscribe(() => {
+      this.navigationService.showEditIconAgain();
     });
   }
 

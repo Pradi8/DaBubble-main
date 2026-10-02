@@ -1,4 +1,4 @@
-import { Injectable, inject, OnDestroy } from '@angular/core';
+import { Injectable, inject, OnDestroy, signal } from '@angular/core';
 import { Location } from '@angular/common';
 import { BehaviorSubject, Subscription, fromEvent } from 'rxjs';
 import { map, startWith } from 'rxjs/operators';
@@ -22,6 +22,16 @@ export class NavigationService {
 
   isMobile = window.innerWidth < 1000; 
   private resizeSubscription: Subscription | undefined;
+
+  showEditIcon = signal(true);
+
+  hideEditIcon() {
+    this.showEditIcon.set(false);
+  }
+
+  showEditIconAgain() {
+    this.showEditIcon.set(true);
+  }
 
   private_ = (() => {
     this.resizeSubscription = fromEvent(window, 'resize')

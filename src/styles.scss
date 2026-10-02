@@ -33,6 +33,10 @@ button {
     cursor: pointer;
 }
 
+.cursor-default {
+    cursor: default;
+}
+
 .standard-transition {
     transition: all 125ms ease-in-out;
 }

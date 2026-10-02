@@ -1,7 +1,6 @@
 import { Component, inject, Inject, OnInit } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { User } from '../../../models/user.class';
-import { MatIcon } from '@angular/material/icon';
 import { NgClass, NgIf } from '@angular/common';
 import { UserService } from './../../services/user.service'
 import { FormsModule, } from '@angular/forms';
@@ -12,7 +11,7 @@ import { ChatService } from '../../services/chat.service';
 @Component({
   selector: 'app-user-card',
   standalone: true,
-  imports: [MatIcon, NgClass, FormsModule, NgIf],
+  imports: [NgClass, FormsModule, NgIf],
   templateUrl: './user-card.component.html',
   styleUrl: './user-card.component.scss'
 })
@@ -24,6 +23,7 @@ export class UserCardComponent implements OnInit {
   chatService = inject(ChatService);
   channelService = inject(ChannelService);
   userUpdateNameAktiv: boolean = false;
+  isPressed_editUsername: boolean = false;
 
   selectedAvatar: string;
   items = [

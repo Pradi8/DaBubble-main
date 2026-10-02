@@ -13,12 +13,19 @@
       <h3>{{data.user.name}}</h3>
       <span *ngIf="isCurrentUser()" (click)="changeName()">
         <span class="desktop">
-          <mat-icon class="edit">edit</mat-icon>
+          <img 
+            class="desktop edit-icon"
+            [src]="isPressed_editUsername ? 'icons/edit_purple_icon.png' : 'icons/edit_black_icon.png'"
+            (mousedown)="isPressed_editUsername = true"
+            (mouseup)="isPressed_editUsername = false"
+            (mouseleave)="isPressed_editUsername = false"
+            alt="edit_icon"
+          />
         </span>
         <p class="mobile">Bearbeiten</p>
       </span>
     </div>
-    <div [ngClass]="data.user.active ? 'online' : 'offline'">
+    <div class="cursor-default" [ngClass]="data.user.active ? 'online' : 'offline'">
         <img [src]="data.user.active ? 'icons/online_icon.png' : 'icons/offline_icon.png'"/>
       <p>{{data.user.active ? 'Online' : 'Offline'}}</p>
     </div>
@@ -33,7 +40,10 @@
     </div>
   </div>
   <div class="button-container" *ngIf="!isCurrentUser()">
-    <button class="standard-transition" (click)="selectUserResult('chats', data.user)"><mat-icon>chat_bubble_outline</mat-icon>Nachricht</button>
+    <button class="standard-transition" (click)="selectUserResult('chats', data.user)">
+      <img src="icons/mode_comment_icon.png" alt="comment_icon"/>
+      Nachricht
+    </button>
   </div>
 </div>
 <div [ngClass]="!userUpdateNameAktiv ? 'active' : 'user-change-name-container'">
