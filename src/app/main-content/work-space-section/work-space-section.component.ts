@@ -81,10 +81,10 @@ export class WorkSpaceSectionComponent implements OnInit, OnDestroy {
   myPanel: any = true;
 
   channels$: Observable<Allchannels[]> | undefined;
-  onlineUser: string = 'status/online.png';
-  offlineUser: string = 'status/offline.png';
-  imgSrc: string = 'work-space/edit-square.png';
-  addChannelImgSrc: string = 'icons/add_circle_icon.png';
+  onlineUser: string = './assets/status/online.png';
+  offlineUser: string = './assets/status/offline.png';
+  imgSrc: string = './assets/work-space/edit-square.png';
+  addChannelImgSrc: string = './assets/icons/add_circle_icon.png';
   showEditIcon = true;
 
   accordion = viewChild.required(MatAccordion);

@@ -5,7 +5,7 @@
                 <div class="user-chanel-list-container standard-transition" *ngFor="let user of users$ | async; let index = index"
                     (click)="selecetedUserMention(user, index)">
                     <div>
-                        <img class="user-logo" src="avatar/{{user.avatar}}" alt="">
+                        <img class="user-logo" src="./assets/avatar/{{user.avatar}}" alt="">
                         <img class="status-img" src="{{ user.active ? onlineUser : offlineUser }}" alt="">
                     </div>
                     <div>{{user.name}}</div>
@@ -33,16 +33,16 @@
             <div class="icons-container standard-transition">
                 <div>
                     <div class="standard-transition" (click)="showAllEmojis($event)" (mouseover)="imgSrcReaction = 'send-email/add-reaction-color.png'"
-                            (mouseout)="imgSrcReaction = 'send-email/add-reaction.png'">
+                            (mouseout)="imgSrcReaction = './assets/send-email/add-reaction.png'">
                         <img [src]="imgSrcReaction">
                     </div>
                     <div class="standard-transition" (click)="userMention($event)" (mouseover)="imgSrcMention = 'send-email/mention-color.png'"
-                            (mouseout)="imgSrcMention = 'send-email/mention.png'">
+                            (mouseout)="imgSrcMention = './assets/send-email/mention.png'">
                         <img [src]="imgSrcMention">
                     </div>
                 </div>
                 <div class="send-icon-container" (click)="sendMessage()">
-                    <img src="send-email/send.png">
+                    <img src="./assets/send-email/send.png">
                 </div>
             </div>
         </mat-form-field>

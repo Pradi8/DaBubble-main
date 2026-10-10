@@ -41,8 +41,8 @@ export class HeaderChatSectionComponent implements OnInit, AfterViewInit, OnDest
   private searchService = inject(SearchService);
   private router = inject(Router);
 
-  onlineUser: string = 'status/online.png';
-  offlineUser: string = 'status/offline.png';
+  onlineUser: string = './assets/status/online.png';
+  offlineUser: string = './assets/status/offline.png';
 
   newMessageSearchTerm: string = '';
   channelResults: SearchResult[] = [];

@@ -1,18 +1,18 @@
 <header>
   <div class="logo-container mobile">
-    <img src="logo/logo-with-text.png">
+    <img src="./assets/logo/logo-with-text.png">
   </div>
   <div class="logo-container desktop">
     @if (!(navigationService.mobileHeaderDevspace$ | async)) {
-      <img src="logo/logo-with-text.png">
+      <img src="./assets/logo/logo-with-text.png">
     } @else if ((navigationService.mobileHeaderDevspace$ | async)) {
-      <img class="devspace_logo_text" src="logo/devspace_logo_text.png" (click)="mobileHeader()">
+      <img class="devspace_logo_text" src="./assets/logo/devspace_logo_text.png" (click)="mobileHeader()">
     }
   </div>
   <mat-form-field class="search-container">
     <input matInput type="text" placeholder="Devspace durchsuchen" [(ngModel)]="searchTerm" (input)="onSearchInput()">
     <button matSuffix mat-icon-button aria-label="Clear">
-        <img class="search-icon" src="icons/search_icon.png" alt="search_icon"/> 
+        <img class="search-icon" src="./assets/icons/search_icon.png" alt="search_icon"/> 
     </button>
   </mat-form-field>
   <div class="user-container" #div (click)="openDialog('0ms', '0ms', div)">
@@ -21,29 +21,29 @@
         <span class="standard-transition name"> {{channelService.currentUser?.name}} </span>
       </div>
       <div class="avatar-container">
-        <img *ngIf="channelService?.currentUser?.avatar" [src]="'avatar/' + channelService.currentUser?.avatar">
+        <img *ngIf="channelService?.currentUser?.avatar" [src]="'./assets/avatar/' + channelService.currentUser?.avatar">
         <img class="status-img" src="{{ channelService.currentUser?.active ? onlineUser : offlineUser }}" alt="">
       </div>
       <div>
-        <img class="arrow-down-icon" src="icons/arrow_down_icon.png" alt="icons/arrow_down_icon" />
+        <img class="arrow-down-icon" src="./assets/icons/arrow_down_icon.png" alt="icons/arrow_down_icon" />
       </div>
     </div>
   </div>
   <div class="desktop avatar-container" (click)="openDialogMobile()">
-        <img *ngIf="channelService.currentUser?.avatar" [src]="'avatar/' + channelService.currentUser?.avatar">
+        <img *ngIf="channelService.currentUser?.avatar" [src]="'./assets/avatar/' + channelService.currentUser?.avatar">
   </div>
 
   <div class="search-results" *ngIf="showDropdown">
 
     <div *ngIf="dropdownType === 'channel'" class="dropdown-section">
       <div class="dropdown-header">
-        <img class="tag-icon" src="icons/tag_icon.png" alt="tag_icon"/>
+        <img class="tag-icon" src="./assets/icons/tag_icon.png" alt="tag_icon"/>
         <span>Channels</span>
       </div>
       <div *ngFor="let channel of channelResults" class="search-result-item channel-item standard-transition"
         (click)="selectChannelResult(channel)">
         <div class="result-icon">
-          <img class="tag-icon" src="icons/tag_icon.png" alt="tag_icon"/>
+          <img class="tag-icon" src="./assets/icons/tag_icon.png" alt="tag_icon"/>
         </div>
         <div class="result-content">
           <div class="result-name">{{channel.name}}</div>
@@ -57,19 +57,19 @@
 
     <div *ngIf="dropdownType === 'user'" class="dropdown-section">
       <div class="dropdown-header">
-        <img src="icons/person_icon.png" alt="person_icon"/> 
+        <img src="./assets/icons/person_icon.png" alt="person_icon"/> 
         <span>Personen</span>
       </div>
       <div *ngFor="let user of userResults" class="search-result-item user-item standard-transition"
         (click)="selectUserResult(dropdownType,user)">
         <div class="result-icon">
           <div class="avatar-wrapper">
-            <img *ngIf="user.avatar" [src]="'avatar/' + user.avatar" class="user-avatar">
+            <img *ngIf="user.avatar" [src]="'./assets/avatar/' + user.avatar" class="user-avatar">
             <div *ngIf="!user.avatar" class="default-avatar">
-              <img src="icons/person_icon.png" alt="person_icon"/>
+              <img src="./assets/icons/person_icon.png" alt="person_icon"/>
             </div>
             <img class="status-img-search"
-              [src]="user.description === 'Online' ? 'status/online.png' : 'status/offline.png'">
+              [src]="user.description === 'Online' ? './assets/status/online.png' : './assets/status/offline.png'">
           </div>
         </div>
         <div class="result-content">
@@ -84,7 +84,7 @@
 
     <div *ngIf="dropdownType === 'normal'" class="dropdown-section">
       <div class="dropdown-header">
-        <img class="search-icon" src="icons/search_icon.png" alt="search_icon"/> 
+        <img class="search-icon" src="./assets/icons/search_icon.png" alt="search_icon"/> 
         <span>Nachrichten</span>
       </div>
       <div *ngFor="let result of searchResults" class="search-result-item message-item standard-transition"
@@ -92,7 +92,7 @@
         <div class="result-icon">
           <img
             class="result-icon"
-            [src]="result.isDirectMessage ? 'chat-section/comment-color.png' : 'icons/tag_icon.png'"
+            [src]="result.isDirectMessage ? './assets/chat-section/comment-color.png' : './assets/icons/tag_icon.png'"
             [alt]="result.isDirectMessage ? 'Nachricht' : 'Tag'"
           />
         </div>

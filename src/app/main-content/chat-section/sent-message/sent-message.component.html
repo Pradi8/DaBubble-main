@@ -3,7 +3,7 @@
     <div class="users-message-container" *ngIf="message.senderId == channelService.currentUserId">
         <div class="message-container">
             <div>
-                <img class="user-logo" src="avatar/{{channelService.currentUser?.avatar}}" alt="">
+                <img class="user-logo" src="./assets/avatar/{{channelService.currentUser?.avatar}}" alt="">
             </div>
             <div class="message-info">
                 <div class="user-date-container">
@@ -21,8 +21,8 @@
                         <div class="icons-container">
                             <div>
                                 <div (click)="showAllEmojis($event)" class="standard-transition"
-                                    (mouseover)="imgReactionInput = 'chat-section/add-reaction-color.png'"
-                                    (mouseout)="imgReactionInput = 'chat-section/add-reaction.png'">
+                                    (mouseover)="imgReactionInput = './assets/chat-section/add-reaction-color.png'"
+                                    (mouseout)="imgReactionInput = './assets/chat-section/add-reaction.png'">
                                     <img [src]="imgReactionInput">
                                 </div>
                             </div>
@@ -75,8 +75,8 @@
                         <p *ngIf="showAllMessageThreadReactions" (click)="hideAllReactions()">Weniger anzeigen</p>
                     </div>
                     <div (click)="openEmojiPicker(reactBtn, $event)">
-                        <img [src]="imgReaction" (mouseover)="imgReaction='chat-section/add-reaction-color.png'"
-                            (mouseout)="imgReaction='chat-section/add-reaction.png'">
+                        <img [src]="imgReaction" (mouseover)="imgReaction='./assets/chat-section/add-reaction-color.png'"
+                            (mouseout)="imgReaction='./assets/chat-section/add-reaction.png'">
                     </div>
                 </div>
                 <div class="answer-date-container" (click)="chatService.answerOnMessage(chatService.chatMode, message.id, message.text, message.senderName, message.userAvatar)">
@@ -92,8 +92,8 @@
     </div>
     <div class="message-hover-options" [class.menu-open]="showCustomMenu">
         <div class="custom-menu-trigger"
-            (mouseenter)="imgSrcMore = 'chat-section/more-vert-color.png'; showCustomMenu = true"
-            (mouseleave)="imgSrcMore = 'chat-section/more-vert.png'; showCustomMenu = false">
+            (mouseenter)="imgSrcMore = './assets/chat-section/more-vert-color.png'; showCustomMenu = true"
+            (mouseleave)="imgSrcMore = './assets/chat-section/more-vert.png'; showCustomMenu = false">
             <img [src]="imgSrcMore">
             <div class="custom-menu-dropdown" *ngIf="showCustomMenu" (mouseenter)="showCustomMenu = true"
                 (mouseleave)="showCustomMenu = false">
@@ -102,11 +102,11 @@
             </div>
         </div>
         <div *ngIf="mode !== 'thread'" (click)="chatService.answerOnMessage(chatService.chatMode, message.id, message.text, message.senderName, message.userAvatar)"
-            (mouseover)="imgComment='chat-section/comment-color.png'" (mouseout)="imgComment='chat-section/comment.png'">
+            (mouseover)="imgComment='./assets/chat-section/comment-color.png'" (mouseout)="imgComment='./assets/chat-section/comment.png'">
             <img [src]="imgComment">
         </div>
-        <div (click)="openEmojiPicker(reactBtn, $event)" (mouseover)="imgReaction='chat-section/add-reaction-color.png'"
-            (mouseout)="imgReaction='chat-section/add-reaction.png'">
+        <div (click)="openEmojiPicker(reactBtn, $event)" (mouseover)="imgReaction='./assets/chat-section/add-reaction-color.png'"
+            (mouseout)="imgReaction='./assets/chat-section/add-reaction.png'">
             <img [src]="imgReaction">
         </div>
         <div *ngFor="let emoji of chatService.mostUsedEmojis let i = index">

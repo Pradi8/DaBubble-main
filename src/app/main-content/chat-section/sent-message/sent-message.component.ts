@@ -46,10 +46,10 @@ export class SentMessageComponent implements OnInit {
   showEmojis: boolean = false;
   messageReacton: string = '';
   constructor(public emojiPickerService: EmojiPickerService) { this.getUserData(); }
-  imgSrcMore: any = 'chat-section/more-vert.png';
-  imgComment: any = 'chat-section/comment.png';
-  imgReaction: any = 'chat-section/add-reaction.png';
-  imgReactionInput: any = 'chat-section/add-reaction.png';
+  imgSrcMore: any = './assets/chat-section/more-vert.png';
+  imgComment: any = './assets/chat-section/comment.png';
+  imgReaction: any = './assets/chat-section/add-reaction.png';
+  imgReactionInput: any = './assets/chat-section/add-reaction.png';
   selectedUser: any;
   editMessageActive: boolean = false;
   editMessageText: string = '';

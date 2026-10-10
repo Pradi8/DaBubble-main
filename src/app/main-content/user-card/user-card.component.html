@@ -1,11 +1,11 @@
 <div class="header-container">
   <p>{{ userUpdateNameAktiv ? 'Dein Profil bearbeiten' : 'Profil' }}</p>
   <button class="close-icon" (click)="closeDialog()">
-    <img src="icons/close_icon.png" alt="close_icon"/>
+    <img src="./assets/icons/close_icon.png" alt="close_icon"/>
   </button>
 </div>
 <div class="user-avatar">
-  <img class="avatar-img" [src]="userUpdateNameAktiv ? selectedAvatar : 'avatar/' + data.user.avatar" alt="">
+  <img class="avatar-img" [src]="userUpdateNameAktiv ? selectedAvatar : './assets/avatar/' + data.user.avatar" alt="">
 </div>
 <div [ngClass]="userUpdateNameAktiv ? 'active' : 'notactive'">
   <div class="user-name-online-container">
@@ -15,7 +15,7 @@
         <span class="desktop">
           <img 
             class="desktop edit-icon"
-            [src]="isPressed_editUsername ? 'icons/edit_purple_icon.png' : 'icons/edit_black_icon.png'"
+            [src]="isPressed_editUsername ? './assets/icons/edit_purple_icon.png' : './assets/icons/edit_black_icon.png'"
             (mousedown)="isPressed_editUsername = true"
             (mouseup)="isPressed_editUsername = false"
             (mouseleave)="isPressed_editUsername = false"
@@ -26,13 +26,13 @@
       </span>
     </div>
     <div class="cursor-default" [ngClass]="data.user.active ? 'online' : 'offline'">
-        <img [src]="data.user.active ? 'icons/online_icon.png' : 'icons/offline_icon.png'"/>
+        <img [src]="data.user.active ? './assets/icons/online_icon.png' : './assets/icons/offline_icon.png'"/>
       <p>{{data.user.active ? 'Online' : 'Offline'}}</p>
     </div>
   </div>
   <div class="email-container">
     <div>
-      <img class="email-icon" src="icons/mail_icon.png" alt="email_icon"/>
+      <img class="email-icon" src="./assets/icons/mail_icon.png" alt="email_icon"/>
       <p>E-Mail-Adresse</p>
     </div>
     <div class="email-adress">
@@ -41,7 +41,7 @@
   </div>
   <div class="button-container" *ngIf="!isCurrentUser()">
     <button class="standard-transition" (click)="selectUserResult('chats', data.user)">
-      <img src="icons/mode_comment_icon.png" alt="comment_icon"/>
+      <img src="./assets/icons/mode_comment_icon.png" alt="comment_icon"/>
       Nachricht
     </button>
   </div>
@@ -59,7 +59,7 @@
 
   <div class="input-container">
     <div class="input-title">
-      <img src="work-space/account-circle.png" alt="">
+      <img src="./assets/work-space/account-circle.png" alt="">
       <h2>Vollständiger Name</h2>
     </div>
     <div>

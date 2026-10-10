@@ -6,7 +6,7 @@
             {{ channelService.userSubcollectionChannelName }}
         } </span>
         <div class="close-icon">
-            <img class="close-icon" (click)="dialogRef.close()" src="icons/close_icon.png" alt="close_icon"/>
+            <img class="close-icon" (click)="dialogRef.close()" src="./assets/icons/close_icon.png" alt="close_icon"/>
         </div>
     </div>
     <mat-card *ngIf="!showEditChannelName" class="channel-headline mat-card-class">
@@ -15,7 +15,7 @@
             <span (click)="editChannelName()" class="channel-edit standard-transition">
                 <img 
                     class="desktop edit-icon"
-                    [src]="isPressed_channelName ? 'icons/edit_purple_icon.png' : 'icons/edit_black_icon.png'"
+                    [src]="isPressed_channelName ? './assets/icons/edit_purple_icon.png' : './assets/icons/edit_black_icon.png'"
                     (mousedown)="isPressed_channelName = true"
                     (mouseup)="isPressed_channelName = false"
                     (mouseleave)="isPressed_channelName = false"
@@ -36,7 +36,7 @@
             <span class="channel-edit standard-transition">
                 <img 
                     class="desktop edit-icon"
-                    [src]="isPressed_channelName ? 'icons/check_circle_purple_icon.png' : 'icons/check_circle_black_icon.png'"
+                    [src]="isPressed_channelName ? './assets/icons/check_circle_purple_icon.png' : './assets/icons/check_circle_black_icon.png'"
                     (mousedown)="isPressed_channelName = true"
                     (mouseup)="isPressed_channelName = false"
                     (mouseleave)="isPressed_channelName = false"
@@ -61,7 +61,7 @@
             <span (click)="editChannelDescription()" class="channel-edit standard-transition">
                 <img 
                     class="desktop edit-icon"
-                    [src]="isPressed_channelDescription ? 'icons/edit_purple_icon.png' : 'icons/edit_black_icon.png'"
+                    [src]="isPressed_channelDescription ? './assets/icons/edit_purple_icon.png' : './assets/icons/edit_black_icon.png'"
                     (mousedown)="isPressed_channelDescription = true"
                     (mouseup)="isPressed_channelDescription = false"
                     (mouseleave)="isPressed_channelDescription = false"
@@ -87,7 +87,7 @@
             <span class="channel-edit standard-transition">
                 <img 
                     class="desktop edit-icon"
-                    [src]="isPressed_channelDescription ? 'icons/check_circle_purple_icon.png' : 'icons/check_circle_black_icon.png'"
+                    [src]="isPressed_channelDescription ? './assets/icons/check_circle_purple_icon.png' : './assets/icons/check_circle_black_icon.png'"
                     (mousedown)="isPressed_channelDescription = true"
                     (mouseup)="isPressed_channelDescription = false"
                     (mouseleave)="isPressed_channelDescription = false"
@@ -109,7 +109,7 @@
          @for (user of dataUser.userAvatarInChannel$ | async; track $index) {
             <div class="users-avatar-and-name">
                 <div class="user-status">
-                    <img class="avatar" [src]="'avatar/' + user.avatar">
+                    <img class="avatar" [src]="'./assets/avatar/' + user.avatar">
                     <img class="user-status-on-off" src="{{ user.userActive ? dataUser.onlineUser : dataUser.offlineUser }}">
                 </div>
                 <span class="user-name"> {{user.name}} 

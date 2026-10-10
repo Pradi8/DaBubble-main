@@ -16,8 +16,8 @@ export class UserService {
   private router = inject(Router);
   private auth = inject(Auth);
   private injector = inject(Injector);
-  onlineUser: string = 'status/online.png';
-  offlineUser: string = 'status/offline.png';
+  onlineUser: string = './assets/status/online.png';
+  offlineUser: string = './assets/status/offline.png';
   showChannel = false;
   showChatPartnerHeader = false;
   showNewMessage = true;
@@ -224,7 +224,7 @@ export class UserService {
         name: user.name,
         email: user.email,
         password: user.password,
-        avatar: 'empty-avatar.png',
+        avatar: './assets/empty-avatar.png',
         registrationComplete: false,
       };
 

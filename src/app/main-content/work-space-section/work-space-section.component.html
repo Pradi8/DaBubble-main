@@ -3,31 +3,31 @@
     <span class="standard-transition">
       {{ isDrawerOpen ? "Workspace-Menü schließen" : "Workspace-Menü öffnen" }}
     </span>
-    <img class="open-close-img standard-transition" [src]=" isDrawerOpen ? 'work-space/hide-menu.png' : 'work-space/show-menu.png'"/>
+    <img class="open-close-img standard-transition" [src]=" isDrawerOpen ? './assets/work-space/hide-menu.png' : './assets/work-space/show-menu.png'"/>
   </button>
   <mat-drawer-container class="example-container" autosize>
     <mat-drawer #drawer class="example-sidenav" mode="side" opened>
       <div class="channel-container">
         <div class="channel-logo-name">
-          <img src="work-space/devspace-logo.png" alt="" />
+          <img src="./assets/work-space/devspace-logo.png" alt="" />
           <h3>Devspace</h3>
         </div>
         <mat-form-field class="search-container">
           <input  matInput  type="text" placeholder="Gehe zu..." [(ngModel)]="searchTerm" (input)="onSearchInput()"/>
           <button matSuffix mat-icon-button aria-label="Clear">
-            <img src="icons/search_icon.png" alt="search_icon"/>
+            <img src="./assets/icons/search_icon.png" alt="search_icon"/>
           </button>
         </mat-form-field>
         <div class="search-results" *ngIf="showDropdown">
         <div *ngIf="dropdownType === 'channel'" class="dropdown-section">
             <div class="dropdown-header">
-              <img class="tag-icon" src="icons/tag_icon.png" alt="tag_icon"/>
+              <img class="tag-icon" src="./assets/icons/tag_icon.png" alt="tag_icon"/>
               <span>Channels</span>
             </div>
             <div *ngFor="let channel of channelResults" class="search-result-item channel-item standard-transition"
               (click)="selectChannelResult(channel)">
               <div class="result-icon">
-                <img src="icons/tag_icon.png" alt="tag_icon"/>
+                <img src="./assets/icons/tag_icon.png" alt="tag_icon"/>
               </div>
               <div class="result-content">
                 <div class="result-name">{{channel.name}}</div>
@@ -40,18 +40,18 @@
           </div>
           <div *ngIf="dropdownType === 'user'" class="dropdown-section">
             <div class="dropdown-header">
-              <img src="icons/person_icon.png" alt="person_icon"/>
+              <img src="./assets/icons/person_icon.png" alt="person_icon"/>
               <span>Personen</span>
             </div>
             <div *ngFor="let user of userResults" class="search-result-item user-item standard-transition"
               (click)="selectUserResult(dropdownType,user)">
               <div class="result-icon">
                 <div class="avatar-wrapper">
-                  <img *ngIf="user.avatar" [src]="'avatar/' + user.avatar" class="user-avatar" alt="">
+                  <img *ngIf="user.avatar" [src]="'./assets/avatar/' + user.avatar" class="user-avatar" alt="">
                   <div *ngIf="!user.avatar" class="default-avatar">
-                    <img src="icons/person_icon.png" alt="person_icon"/>
+                    <img src="./assets/icons/person_icon.png" alt="person_icon"/>
                   </div>
-                  <img class="status-img-search" [src]="user.description === 'Online' ? 'status/online.png' : 'status/offline.png'" alt="">
+                  <img class="status-img-search" [src]="user.description === 'Online' ? './assets/status/online.png' : './assets/status/offline.png'" alt="">
                 </div>
               </div>
               <div class="result-content">
@@ -65,14 +65,14 @@
           </div>
           <div *ngIf="dropdownType === 'normal'" class="dropdown-section">
             <div class="dropdown-header">
-              <img src="icons/search_icon.png" alt="search_icon"/>
+              <img src="./assets/icons/search_icon.png" alt="search_icon"/>
               <span>Nachrichten</span>
             </div>
             <div *ngFor="let result of searchResults" class="search-result-item message-item standard-transition"
               (click)="selectMessageResult(result)">
               <div class="result-icon">
                 <img
-                  [src]="result.isDirectMessage ? 'chat-section/comment-color.png' : 'icons/tag_icon.png'" alt="Channel Icon"
+                  [src]="result.isDirectMessage ? './assets/chat-section/comment-color.png' : './assets/icons/tag_icon.png'" alt="Channel Icon"
                 />
               </div>
               <div class="result-content">
@@ -89,8 +89,8 @@
           </div>
         </div>
         <div class="div-edit-square standard-transition" 
-          (mouseenter)="imgSrc = 'work-space/edit_square_color.png'" 
-          (mouseleave)="imgSrc = 'work-space/edit-square.png'"
+          (mouseenter)="imgSrc = './assets/work-space/edit_square_color.png'" 
+          (mouseleave)="imgSrc = './assets/work-space/edit-square.png'"
           (click)="openNewMessage()">
           <img [src]="imgSrc"/>
         </div>
@@ -101,13 +101,13 @@
             <mat-expansion-panel>
               <mat-expansion-panel-header>
                 <mat-panel-description class="standard-transition">
-                  <img class="standard-transition channel-img" src="icons/workspaces_icon.png" alt="workspaces_icon"/>
+                  <img class="standard-transition channel-img" src="./assets/icons/workspaces_icon.png" alt="workspaces_icon"/>
                   Channels
                 </mat-panel-description>
                 <div class="add-channel standard-transition">
                   <img 
                     class="desktop edit-icon"
-                    [src]="isPressed_addChannel ? 'icons/add_purple_icon.png' : 'icons/add_icon.png'"
+                    [src]="isPressed_addChannel ? './assets/icons/add_purple_icon.png' : './assets/icons/add_icon.png'"
                     (mousedown)="isPressed_addChannel = true"
                     (mouseup)="isPressed_addChannel = false"
                     (mouseleave)="isPressed_addChannel = false"
@@ -133,8 +133,8 @@
               <div>
                 <button (click)="createChannel()">
                   <span class="add-user-channel"
-                    (mouseenter)="addChannelImgSrc = 'icons/add_circle_purple_icon.png'"
-                    (mouseleave)="addChannelImgSrc = 'icons/add_circle_icon.png'"
+                    (mouseenter)="addChannelImgSrc = './assets/icons/add_circle_purple_icon.png'"
+                    (mouseleave)="addChannelImgSrc = './assets/icons/add_circle_icon.png'"
                     >
                     <img [src]="addChannelImgSrc" alt="add channel">
                     Channel hinzufügen
@@ -151,7 +151,7 @@
           <mat-expansion-panel #myPaneltwo="matExpansionPanel">
             <mat-expansion-panel-header>
               <mat-panel-description class="standard-transition">
-                <img class="account-img standard-transition" src="work-space/account-circle.png"/>
+                <img class="account-img standard-transition" src="./assets/work-space/account-circle.png"/>
                 Direktnachrichten
               </mat-panel-description>
             </mat-expansion-panel-header>
@@ -165,7 +165,7 @@
                 class="users-container standard-transition"
                 (click)="chatService.onUserClick('chats', index, user)">
                 <div>
-                  <img class="avatar-small-img" src="avatar/{{ user.avatar }}"/>
+                  <img class="avatar-small-img" src="./assets/avatar/{{ user.avatar }}"/>
                   <img class="status-img" src="{{ user.active ? dataUser.onlineUser : dataUser.offlineUser }}"/>
                 </div>
                 <div>
@@ -194,19 +194,19 @@
               [(ngModel)]="searchTerm"
               (input)="onSearchInput()"/>
             <button matSuffix mat-icon-button aria-label="Clear">
-              <img src="icons/search_icon.png" alt="search_icon"/>
+              <img src="./assets/icons/search_icon.png" alt="search_icon"/>
             </button>
           </mat-form-field>
           <div class="search-results" *ngIf="showDropdown">
             <div *ngIf="dropdownType === 'channel'" class="dropdown-section">
               <div class="dropdown-header">
-                <img src="icons/tag_icon.png" alt="tag_icon"/>
+                <img src="./assets/icons/tag_icon.png" alt="tag_icon"/>
                 <span>Channels</span>
               </div>
               <div *ngFor="let channel of channelResults" class="search-result-item channel-item standard-transition"
                 (click)="selectChannelResult(channel)">
                 <div class="result-icon">
-                  <img src="icons/tag_icon.png" alt="tag_icon"/>
+                  <img src="./assets/icons/tag_icon.png" alt="tag_icon"/>
                 </div>
                 <div class="result-content">
                   <div class="result-name">{{channel.name}}</div>
@@ -219,19 +219,19 @@
             </div>
             <div *ngIf="dropdownType === 'user'" class="dropdown-section">
               <div class="dropdown-header">
-                <img src="icons/person_icon.png" alt="person_icon"/>
+                <img src="./assets/icons/person_icon.png" alt="person_icon"/>
                 <span>Personen</span>
               </div>
               <div *ngFor="let user of userResults" class="search-result-item user-item standard-transition"
                 (click)="selectUserResult(dropdownType,user)">
                 <div class="result-icon">
                   <div class="avatar-wrapper">
-                    <img *ngIf="user.avatar" [src]="'/avatar/' + user.avatar" class="user-avatar" alt="">
+                    <img *ngIf="user.avatar" [src]="'./assets/avatar/' + user.avatar" class="user-avatar" alt="">
                     <div *ngIf="!user.avatar" class="default-avatar">
-                      <img src="icons/person_icon.png" alt="person_icon"/>
+                      <img src="./assets/icons/person_icon.png" alt="person_icon"/>
                     </div>
                     <img class="status-img-search"
-                      [src]="user.description === 'Online' ? 'status/online.png' : 'status/offline.png'" alt="">
+                      [src]="user.description === 'Online' ? './assets/status/online.png' : './assets/status/offline.png'" alt="">
                   </div>
                 </div>
                 <div class="result-content">
@@ -245,14 +245,14 @@
             </div>
             <div *ngIf="dropdownType === 'normal'" class="dropdown-section">
               <div class="dropdown-header">
-                <img src="icons/search_icon.png" alt="search_icon"/>
+                <img src="./assets/icons/search_icon.png" alt="search_icon"/>
                 <span>Nachrichten</span>
               </div>
               <div *ngFor="let result of searchResults" class="search-result-item message-item standard-transition"
                 (click)="selectMessageResult(result)">
                 <div class="result-icon">
                   <img
-                    [src]="result.isDirectMessage ? 'chat-section/comment-color.png' : 'icons/tag_icon.png'" alt="Channel Icon"
+                    [src]="result.isDirectMessage ? './assets/chat-section/comment-color.png' : './assets/icons/tag_icon.png'" alt="Channel Icon"
                   />
                 </div>
                 <div class="result-content">
@@ -278,13 +278,13 @@
               >
                 <mat-expansion-panel-header>
                   <mat-panel-description class="standard-transition"> 
-                    <img class="standard-transition channel-img" src="icons/workspaces_icon.png" alt="workspaces_icon"/>
+                    <img class="standard-transition channel-img" src="./assets/icons/workspaces_icon.png" alt="workspaces_icon"/>
                       Channels
                   </mat-panel-description>
                   <div class="add-channel standard-transition">
                   <img 
                     class="desktop edit-icon"
-                    [src]="isPressed_addChannel ? 'icons/add_purple_icon.png' : 'icons/add_icon.png'"
+                    [src]="isPressed_addChannel ? './assets/icons/add_purple_icon.png' : './assets/icons/add_icon.png'"
                     (mousedown)="isPressed_addChannel = true"
                     (mouseup)="isPressed_addChannel = false"
                     (mouseleave)="isPressed_addChannel = false"
@@ -317,8 +317,8 @@
                 <div>
                   <button (click)="createChannel()">
                     <span class="add-user-channel"
-                      (mouseenter)="addChannelImgSrc = 'icons/add_circle_purple_icon.png'"
-                      (mouseleave)="addChannelImgSrc = 'icons/add_circle_icon.png'"
+                      (mouseenter)="addChannelImgSrc = './assets/icons/add_circle_purple_icon.png'"
+                      (mouseleave)="addChannelImgSrc = './assets/icons/add_circle_icon.png'"
                       >
                       <img [src]="addChannelImgSrc" alt="add channel">
                       Channel hinzufügen
@@ -339,7 +339,7 @@
             >
               <mat-expansion-panel-header>
                 <mat-panel-description class="standard-transition"> 
-                  <img class="account-img standard-transition" src="work-space/account-circle.png"/>
+                  <img class="account-img standard-transition" src="./assets/work-space/account-circle.png"/>
                   Direktnachrichten
                 </mat-panel-description>
               </mat-expansion-panel-header>
@@ -353,7 +353,7 @@
                   class="users-container standard-transition"
                   (click)="chatService.onUserClick('chats', index, user)">
                   <div>
-                    <img class="avatar-small-img" src="avatar/{{ user.avatar }}"/>
+                    <img class="avatar-small-img" src="./assets/avatar/{{ user.avatar }}"/>
                     <img class="status-img" src="{{user.active ? dataUser.onlineUser : dataUser.offlineUser}}"/>
                   </div>
                   <div>
@@ -372,7 +372,7 @@
   </div>
   @if (navigationService.showEditIcon()) {
       <div class="edit-icon">
-    <img class="write-message-icon" src="work-space/16B. edit_square.png" (click)="openNewMessage()"/>
+    <img class="write-message-icon" src="./assets/work-space/16B. edit_square.png" (click)="openNewMessage()"/>
   </div>
   }
 </div>

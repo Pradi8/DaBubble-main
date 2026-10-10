@@ -25,12 +25,12 @@ export class AvatarComponent implements OnInit, OnDestroy {
   user: User = new User();
 
   items = [
-    'avatar/woman1.png',
-    'avatar/men1.png',
-    'avatar/men2.png',
-    'avatar/men3.png',
-    'avatar/woman2.png',
-    'avatar/men4.png',
+    './assets/avatar/woman1.png',
+    './assets/avatar/men1.png',
+    './assets/avatar/men2.png',
+    './assets/avatar/men3.png',
+    './assets/avatar/woman2.png',
+    './assets/avatar/men4.png',
   ];
 
   ngOnInit() {
@@ -43,12 +43,12 @@ export class AvatarComponent implements OnInit, OnDestroy {
 
   selectAvatar(avatarSrc: string) {
     this.selectedAvatar = avatarSrc;
-    const filename = avatarSrc.replace('avatar/', '');
+    const filename = avatarSrc.replace('./assets/avatar/', '');
     this.user.avatar = filename;
   }
 
   removeAvatar() {
-    this.selectedAvatar = 'avatar/empty-avatar.png';
+    this.selectedAvatar = './assets/avatar/empty-avatar.png';
   }
 
   async showSuccessfullyCreateContactOverlay() {

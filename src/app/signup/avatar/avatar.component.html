@@ -5,7 +5,7 @@
 
       <div class="choose-avatar">
         <img class="arrow-back standard-transition"
-          (click)="navigateBack()" src="signup/arrow-back.png" alt="arrow back">
+          (click)="navigateBack()" src="./assets/signup/arrow-back.png" alt="arrow back">
         <h1>Wähle deinen Avatar</h1>
 
         <div class="img-and-name">
@@ -25,7 +25,7 @@
 
         <div class="forward-button-postition">
           <button (click)="showSuccessfullyCreateContactOverlay()" class="forward-button standard-transition"
-            [disabled]="selectedAvatar === 'avatar/empty-avatar.png'">Weiter</button>
+            [disabled]="selectedAvatar === './assets/avatar/empty-avatar.png'">Weiter</button>
         </div>
       </div>
 

@@ -14,7 +14,7 @@
           <ng-container *ngIf="chatService.messages$ | async as messages">
             <div *ngIf="!messages.length && chatService.chatMode === 'chats'" class="user-logo-name-container">
               <div class="user-logo-big" *ngIf="selectedUser">
-                <img src="avatar/{{selectedUser.avatar}}" alt="">
+                <img src="./assets/avatar/{{selectedUser.avatar}}" alt="">
               </div>
               <div class="user-name-container" *ngIf="selectedUser">
                 <h2>

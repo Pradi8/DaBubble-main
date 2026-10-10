@@ -5,7 +5,7 @@
       </div>
       <div class="add-user-header">
           <p class="text">Leute hinzufügen</p>
-          <img class="close-icon" (click)="close()" src="icons/close_icon.png" alt="close_icon"/>
+          <img class="close-icon" (click)="close()" src="./assets/icons/close_icon.png" alt="close_icon"/>
       </div>
       <div class="current-channel-name-headline">
           # @if (channelService.currentChannelName) {
@@ -32,7 +32,7 @@
             <mat-option [value]="user">
               <div class="user-avatar-name">
                 <div class="user-status">
-                  <img class="user-avatar" src="avatar/{{user.avatar}}">
+                  <img class="user-avatar" src="./assets/avatar/{{ user.avatar }}">
                   <img class="user-status-on-off" src="{{ user.active ? userService.onlineUser : userService.offlineUser }}">
                 </div>
                 <span>{{ user.name }}</span> 
@@ -44,9 +44,9 @@
     }@else if (showSelectedUser) {
       <div class="all-selected-user">
         <div class="selected-user"> 
-          <img class="selected-user-avatar" src="avatar/{{selectedUser.avatar}}"> 
+          <img class="selected-user-avatar" src="./assets/avatar/{{selectedUser.avatar}}"> 
           <span>{{selectedUser.name}}</span>
-          <img class="close-icon" (click)="removeSelectedUser()" src="icons/close_icon.png" alt="close_icon"/>
+          <img class="close-icon" (click)="removeSelectedUser()" src="./assets/icons/close_icon.png" alt="close_icon"/>
         </div>
       </div>     
     }

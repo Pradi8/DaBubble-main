@@ -4,7 +4,7 @@
     </div>
     <div class="add-user-header marg-bot">
         <p>Leute hinzufügen</p>
-        <img class="close-icon" (click)="close()" src="icons/close_icon.png" alt="close_icon"/>
+        <img class="close-icon" (click)="close()" src="./assets/icons/close_icon.png" alt="close_icon"/>
     </div>
     <div class="selector">
         <mat-radio-group aria-label="Select an option"  [(ngModel)]="selectAllUsersInChannel" (change)="checkboxValue()">
@@ -34,7 +34,7 @@
                     <mat-option [value]="user">
                         <div class="user-avatar-name">
                             <div class="user-status">
-                                <img class="user-avatar" src="avatar/{{user.avatar}}">
+                                <img class="user-avatar" src="./assets/avatar/{{user.avatar}}">
                                 <img class="user-status-on-off" src="{{ user.active ? userService.onlineUser : userService.offlineUser }}">
                             </div>
                             <span>{{ user.name }}</span> 
@@ -48,9 +48,9 @@
             <div class="selected-users-cont" (click)="showSearchBar()">
                 @for (user of selectedUsers; track $index) {
                     <div class="selected-users">
-                        <img class="user-avatar result-user" src="avatar/{{user.avatar}}">
+                        <img class="user-avatar result-user" src="./assets/avatar/{{user.avatar}}">
                         <span>{{ user.name }}</span>
-                        <img class="close-icon" (click)="removeSelectedUser(user.userId, $event); $event.stopPropagation()" src="icons/close_icon.png" alt="close_icon"/>
+                        <img class="close-icon" (click)="removeSelectedUser(user.userId, $event); $event.stopPropagation()" src="./assets/icons/close_icon.png" alt="close_icon"/>
                     </div>
                     }
             </div>

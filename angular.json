@@ -28,7 +28,8 @@
             "assets": [
               {
                 "glob": "**/*",
-                "input": "src/app/assets"
+                "input": "src/app/assets",
+                "output": "assets"
               }
             ],
             "styles": [
@@ -43,11 +44,11 @@
                 {
                   "type": "initial",
                   "maximumWarning": "500kB",
-                  "maximumError": "4MB"
+                  "maximumError": "5MB"
                 },
                 {
                   "type": "anyComponentStyle",
-                  "maximumWarning": "4kB",
+                  "maximumWarning": "25kB",
                   "maximumError": "30kB"
                 }
               ],
@@ -86,7 +87,7 @@
             "tsConfig": "tsconfig.spec.json",
             "inlineStyleLanguage": "scss",
             "assets": [
-              {
+                            {
                 "glob": "**/*",
                 "input": "public"
               }

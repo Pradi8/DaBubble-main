@@ -99,10 +99,6 @@ export class ChatSectionComponent implements OnInit, AfterViewInit, AfterViewChe
   private handleChannelRoute(): void {
     const url = window.location.href;
     const channelMatch = url.match(/\/channels\/([^\/\?#]+)/);
-/*     if (channelMatch) {
-      const channelId = channelMatch[1];
-      this.initializeChannelMode(channelId);
-    } */
   }
 
   private initializeComponent(): void {
