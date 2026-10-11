@@ -7,6 +7,7 @@ import { FormsModule, } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { ChannelService } from '../../services/channel.service';
 import { ChatService } from '../../services/chat.service';
+import { NavigationService } from '../../services/navigation.service';
 
 @Component({
   selector: 'app-user-card',
@@ -22,6 +23,7 @@ export class UserCardComponent implements OnInit {
   dataUser = inject(UserService);
   chatService = inject(ChatService);
   channelService = inject(ChannelService);
+  navigationService = inject(NavigationService);
   userUpdateNameAktiv: boolean = false;
   isPressed_editUsername: boolean = false;
 
@@ -52,6 +54,7 @@ export class UserCardComponent implements OnInit {
 
   closeDialog() {
     this.dialogRef.close();
+    this.navigationService.showEditIconAgain();
   }
 
   async updateName() {
@@ -63,7 +66,6 @@ export class UserCardComponent implements OnInit {
       this.userUpdateNameAktiv = false;
       this.closeDialog();
     } catch (err) {
-      console.error('Fehler beim Aktualisieren des Profils:', err);
     }
   }
 
@@ -104,7 +106,6 @@ export class UserCardComponent implements OnInit {
       await this.userService.updateUserAvatar(avatarFileName);
       this.data.user.avatar = avatarFileName;
     } catch (err) {
-      console.error('Fehler beim Aktualisieren des Avatars:', err);
       throw err;
     }
   }
@@ -127,7 +128,6 @@ export class UserCardComponent implements OnInit {
       };
       await this.chatService.onUserClick(type, 0, userForChat);
     } catch (error) {
-      console.log('Fehler beim Öffnen des privaten Chats:', error);
     }
   }
 }

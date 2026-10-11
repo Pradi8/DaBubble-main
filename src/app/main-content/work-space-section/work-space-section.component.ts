@@ -181,9 +181,6 @@ export class WorkSpaceSectionComponent implements OnInit, OnDestroy {
     restoreFocus: false,
     });
     this.navigationService.hideEditIcon();
-    dialogRef.afterClosed().subscribe(() => {
-      this.navigationService.showEditIconAgain();
-    });
   }
 
   mobileMode() {
@@ -413,9 +410,7 @@ export class WorkSpaceSectionComponent implements OnInit, OnDestroy {
     const channel = this.findUserChannel(channelId);
     if (channel) {
       this.openChannelAndNavigateToMessage(channel, channelId, messageId);
-    } else {
-      console.log('Channel not found or user not a member');
-    }
+    } 
   }
 
   private parseChannelMessageId(id: string): { channelId: string | null, messageId: string | null } {
@@ -504,7 +499,7 @@ export class WorkSpaceSectionComponent implements OnInit, OnDestroy {
     this.navigationService.setMobileHeaderDevspace(true);
     }
 
-     ngOnDestroy(): void {
+  ngOnDestroy(): void {
     this.unsubChannels?.unsubscribe();
     this.userDataSub?.unsubscribe();
     this.channelDataSub?.unsubscribe();

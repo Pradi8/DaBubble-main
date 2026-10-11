@@ -34,7 +34,7 @@ export class ChannelSectionComponent implements OnInit {
 
   newChannel = new Allchannels();
 
-   ngOnInit(): void {
+  ngOnInit(): void {
     this.channelService.showAllChannels();
   }
 

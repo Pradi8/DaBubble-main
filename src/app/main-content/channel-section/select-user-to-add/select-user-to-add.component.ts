@@ -59,7 +59,7 @@ export class SelectUserToAddComponent {
   close() {
     this.dialogRef?.close();
     this.bottomSheetRef?.dismiss();
-    this.placeHolderActive = false;
+    this.placeHolderActive = false;;
   }
 
   setFocusInput() {

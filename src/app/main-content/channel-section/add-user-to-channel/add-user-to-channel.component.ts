@@ -4,6 +4,7 @@ import { MatDialogRef } from '@angular/material/dialog';
 import { ChannelService } from '../../../services/channel.service';
 import { MatButtonModule } from '@angular/material/button';
 import { UserService } from '../../../services/user.service';
+import { NavigationService } from '../../../services/navigation.service';
 import { CommonModule } from '@angular/common';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { Router } from '@angular/router';
@@ -19,6 +20,7 @@ export class AddUserToChannelComponent implements OnInit {
 
   channelService = inject(ChannelService);
   userService = inject(UserService);
+  navigationService = inject(NavigationService);
   dialogRef = inject(MatDialogRef<AddUserToChannelComponent>, { optional: true });
   bottomSheetRef = inject(MatBottomSheetRef<AddUserToChannelComponent>, { optional: true });
   router = inject(Router);
@@ -31,7 +33,7 @@ export class AddUserToChannelComponent implements OnInit {
   addedUsers: string | undefined;
 
   ngOnInit() {
-  
+    this.navigationService.hideEditIcon();
   }
 
   addUserToChannel() {

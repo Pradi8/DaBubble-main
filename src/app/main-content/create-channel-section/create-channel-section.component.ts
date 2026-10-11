@@ -8,6 +8,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Allchannels } from '../../../models/allchannels.class';
 import { ChannelService } from '../../services/channel.service';
+import { NavigationService } from '../../services/navigation.service';
 import { SelectUserToAddComponent } from '../channel-section/select-user-to-add/select-user-to-add.component';
 import {
   MatBottomSheet,
@@ -27,6 +28,7 @@ export class CreateChannelSectionComponent implements OnInit {
   bottomSheetRef = inject(MatBottomSheetRef<SelectUserToAddComponent>, { optional: true });
   dataUser = inject(UserService);
   channelService = inject(ChannelService);
+  navigationService = inject(NavigationService);
   newChannel = new Allchannels();
   currentUserId = this.channelService.currentUserId;
   selectUserDialog = inject(MatDialog);
@@ -54,6 +56,9 @@ export class CreateChannelSectionComponent implements OnInit {
   close() {
     this.dialogRef?.close();
     this.bottomSheetRef?.dismiss();
+     if (!this.bottomSheet._openedBottomSheetRef) {
+      this.navigationService.showEditIconAgain();
+    }
   }
 
   async createChannel() { 

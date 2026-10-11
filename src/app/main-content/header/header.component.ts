@@ -93,7 +93,9 @@ export class HeaderComponent {
     panelClass: 'select-user-bottomsheet',
     });
     bottomSheetRef.afterDismissed().subscribe(() => {
-      this.navigationService.showEditIconAgain();
+      if (this.dialog.openDialogs.length === 0) {
+        this.navigationService.showEditIconAgain();
+      }
     });
   }
 
@@ -200,7 +202,6 @@ export class HeaderComponent {
         this.navigationService.triggerScrollToBottom();
       }, 500);
     } catch (error) {
-      console.error('Fehler beim Öffnen des Channels:', error);
     }
   }
 
@@ -221,7 +222,6 @@ export class HeaderComponent {
       };
       await this.chatService.onUserClick(type, 0, userForChat);
     } catch (error) {
-      console.log('Fehler beim Öffnen des privaten Chats:', error);
     }
   }
 
@@ -242,7 +242,6 @@ export class HeaderComponent {
         this.navigateToChannelMessage(messageResult);
       }
     } catch (error) {
-      console.error('Fehler beim Navigieren zur Nachricht:', error);
     }
   }
 
@@ -255,7 +254,6 @@ export class HeaderComponent {
         await this.openDirectChat('chats', otherUser, messageId);
       }
     } catch (error) {
-      console.error('Fehler beim Öffnen des Chats:', error);
     }
   }
 
@@ -300,9 +298,7 @@ export class HeaderComponent {
     const channel = this.findUserChannel(channelId);
     if (channel) {
       this.openChannelAndNavigateToMessage(channel, channelId, messageId);
-    } else {
-      console.log('Channel not found or user not a member');
-    }
+    } 
   }
 
   private parseChannelMessageId(id: string): { channelId: string | null, messageId: string | null } {
@@ -388,5 +384,6 @@ export class HeaderComponent {
   mobileHeader() {
     this.navigationService.setMobileHeaderDevspace(false);
     this.chatService.showThread = false;
+    this.navigationService.showEditIconAgain();
   }
 }

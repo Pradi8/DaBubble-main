@@ -7,6 +7,7 @@ import { UserService } from '../../../services/user.service';
 import { Router } from '@angular/router';
 import { ChannelService } from '../../../services/channel.service';
 import { ChatService } from '../../../services/chat.service';
+import { NavigationService } from '../../../services/navigation.service';
 import { MAT_BOTTOM_SHEET_DATA, MatBottomSheetRef } from '@angular/material/bottom-sheet';
 
 @Component({
@@ -29,10 +30,12 @@ export class EditLogoutUserComponent {
   readonly userService = inject(UserService);
   readonly channelService = inject(ChannelService);
   readonly chatService = inject(ChatService);
+  readonly navigationService = inject(NavigationService);
   private dataUser = this.userService;
 
 
   openUserDialog() {
+    this.navigationService.hideEditIcon();
     this.userDialog.open(UserCardComponent, {
       panelClass: 'user-profil',
       data: { 
