@@ -48,8 +48,8 @@ export class HeaderComponent {
 
   private bottomSheet = inject(MatBottomSheet);
 
-  onlineUser: string = 'status/online.png';
-  offlineUser: string = 'status/offline.png';
+  onlineUser: string = './assets/status/online.png';
+  offlineUser: string = './assets/status/offline.png';
   searchTerm: string = '';
   searchResults: any[] = [];
   channelResults: SearchResult[] = [];
